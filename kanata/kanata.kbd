@@ -44,18 +44,9 @@
 
     spc (tap-hold-release $tap-time $hold-time spc (layer-toggle nav))
 
-    ;; --- one shot ---
-    ;; oss (one-shot 2000 lsft)
-
     ;; --- Caps Word ---
     ;; cw (caps-word 2000)
 
-    ;; --- simple keycodes ---
-    ;; Ctb C-tab
-    ;; Stb S-tab
-    ;; CStb C-S-tab
-    ;; backspace by word
-    ;; bsw A-bspc 
     ;; lockscreen on macOS
     ;; lck C-M-q
 )
