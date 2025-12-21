@@ -1,0 +1,61 @@
+(defcfg process-unmapped-keys yes)
+
+(defsrc
+    esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
+    y u i o
+    a s d h j k l scln
+    n m comm .
+    spc
+)
+
+(deflayer base
+    @esc brdn brup lrld _ _ _ prev pp next mute vold volu
+    _ _ _ _
+    @a @s @d _ _ @k @l @scln
+    _ _ _ _
+    @spc
+)
+
+(deflayer nav
+    _ _ _ _ _ _ _ _ _ _ _ _ _
+    A-left C-S-tab C-tab A-right
+    _ _ _ left down up right _
+    home C-M-left C-M-right end
+    _
+)
+
+
+(defvar
+    tap-time 200
+    hold-time 250
+)
+
+(defalias
+    ;; --- dual function keys ---
+    esc (tap-hold $tap-time $hold-time esc lrld)
+
+    a (tap-hold $tap-time $hold-time a lctl)
+    s (tap-hold $tap-time $hold-time s lalt)
+    d (tap-hold $tap-time $hold-time d lmet)
+
+    k (tap-hold $tap-time $hold-time k lmet)
+    l (tap-hold-except-keys $tap-time $hold-time l ralt (i))
+    scln (tap-hold $tap-time $hold-time scln rctl)
+
+    spc (tap-hold-release $tap-time $hold-time spc (layer-toggle nav))
+
+    ;; --- one shot ---
+    ;; oss (one-shot 2000 lsft)
+
+    ;; --- Caps Word ---
+    ;; cw (caps-word 2000)
+
+    ;; --- simple keycodes ---
+    ;; Ctb C-tab
+    ;; Stb S-tab
+    ;; CStb C-S-tab
+    ;; backspace by word
+    ;; bsw A-bspc 
+    ;; lockscreen on macOS
+    ;; lck C-M-q
+)
