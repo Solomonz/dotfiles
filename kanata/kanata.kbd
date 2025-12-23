@@ -1,9 +1,12 @@
-(defcfg process-unmapped-keys yes)
+(defcfg
+    process-unmapped-keys yes
+    concurrent-tap-hold yes
+)
 
 (defsrc
     esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
     y u i o
-    a s d h j k l scln
+    a s d f h j k l scln
     n m comm .
     lmet spc rmet
 )
@@ -11,7 +14,7 @@
 (deflayer base
     @esc brdn brup lrld _ _ _ prev pp next mute vold volu
     _ _ _ _
-    @a @s @d _ _ @k @l @scln
+    @a @s @d _ _ _ @k @l @scln
     _ _ _ _
     @tab @spc _
 )
@@ -19,7 +22,7 @@
 (deflayer nav
     _ _ _ _ _ _ _ _ _ _ _ _ _
     A-left C-S-tab C-tab A-right
-    _ _ _ left down up right _
+    _ _ _ _ left down up right _
     home C-M-left C-M-right end
     _ _ _
 )
@@ -27,7 +30,7 @@
 (deflayer num
     _ _ _ _ _ _ _ _ _ _ _ _ _
     S-= 7 8 9
-    _ _ _ = 4 5 6 S-5
+    _ _ _ _ = 4 5 6 S-5
     - 1 2 3
     _ _ 0
 )
@@ -36,6 +39,12 @@
 (defvar
     tap-time 200
     hold-time 250
+)
+
+(defchordsv2
+    (j k) esc $tap-time first-release (nav num)
+    (f d) ent $tap-time first-release (nav num)
+    (f j) (caps-word 2000) $tap-time first-release (nav num)
 )
 
 (defalias
@@ -52,9 +61,6 @@
 
     tab (tap-hold-release $tap-time $hold-time tab (layer-toggle num))
     spc (tap-hold-release $tap-time $hold-time spc (layer-toggle nav))
-
-    ;; --- Caps Word ---
-    ;; cw (caps-word 2000)
 
     ;; lockscreen on macOS
     ;; lck C-M-q
