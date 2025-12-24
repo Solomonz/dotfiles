@@ -5,33 +5,41 @@
 
 (defsrc
     esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
-    y u i o
-    a s d f h j k l scln
-    n m comm .
+    q w e r t y u i o p
+    a s d f g h j k l scln apo
+    z x c v b n m comm . /
     lmet spc rmet
 )
 
 (deflayer base
-    @esc brdn brup lrld _ _ _ prev pp next mute vold volu
-    _ _ _ _
-    @a @s @d _ _ _ @k @l @scln
-    _ _ _ _
+    @besc brdn brup lrld _ _ _ prev pp next mute vold volu
+    _ _ _ _ _ _ _ _ _ _
+    @ba @bs @bd _ _ _ _ @bk @bl @bscln _
+    _ _ _ _ _ _ _ _ _ _
+    @tab @spc _
+)
+
+(deflayer graphite
+    @gesc brdn brup lrld _ _ _ prev pp next mute vold volu
+    b l d w z apo f o u j
+    @gn @gr @gt s g y h @ga @ge @gi comm
+    q x m c v k p . - /
     @tab @spc _
 )
 
 (deflayer nav
     _ _ _ _ _ _ _ _ _ _ _ _ _
-    A-left C-S-tab C-tab A-right
-    _ _ _ _ left down up right _
-    home C-M-left C-M-right end
+    _ _ _ _ _ A-left C-S-tab C-tab A-right _
+    _ _ _ _ _ left down up right _ _
+    _ _ _ _ _ home C-M-left C-M-right end _
     _ _ _
 )
 
 (deflayer num
     _ _ _ _ _ _ _ _ _ _ _ _ _
-    S-= 7 8 9
-    _ _ _ _ = 4 5 6 S-5
-    - 1 2 3
+    _ _ _ _ _ S-= 7 8 9 _
+    _ _ _ _ _ = 4 5 6 S-5 _
+    _ _ _ _ _ - 1 2 3 _
     _ _ 0
 )
 
@@ -45,23 +53,38 @@
     (j k) esc $tap-time first-release (nav num)
     (f d) ent $tap-time first-release (nav num)
     (f j) (caps-word 2000) $tap-time first-release (nav num)
+
+    (h a) esc $tap-time first-release (nav num base)
+    (t s) ent $tap-time first-release (nav num base)
+    (s h) (caps-word 2000) $tap-time first-release (nav num base)
 )
 
 (defalias
-    ;; --- dual function keys ---
-    esc (tap-hold $tap-time $hold-time esc lrld)
-
-    a (tap-hold $tap-time $hold-time a lctl)
-    s (tap-hold $tap-time $hold-time s lalt)
-    d (tap-hold $tap-time $hold-time d lmet)
-
-    k (tap-hold $tap-time $hold-time k lmet)
-    l (tap-hold-except-keys $tap-time $hold-time l ralt (i))
-    scln (tap-hold $tap-time $hold-time scln rctl)
 
     tab (tap-hold-release $tap-time $hold-time tab (layer-toggle num))
     spc (tap-hold-release $tap-time $hold-time spc (layer-toggle nav))
 
-    ;; lockscreen on macOS
-    ;; lck C-M-q
+
+    ;; --- Base layer aliases ---
+    besc (tap-hold $tap-time $hold-time (layer-switch graphite) lrld)
+
+    ba (tap-hold $tap-time $hold-time a lctl)
+    bs (tap-hold $tap-time $hold-time s lalt)
+    bd (tap-hold $tap-time $hold-time d lmet)
+
+    bk (tap-hold $tap-time $hold-time k lmet)
+    bl (tap-hold-except-keys $tap-time $hold-time l ralt (i))
+    bscln (tap-hold $tap-time $hold-time scln rctl)
+
+
+    ;; --- Graphite layer aliases ---
+    gesc (tap-hold $tap-time $hold-time (layer-switch base) lrld)
+
+    gn (tap-hold $tap-time $hold-time n lctl)
+    gr (tap-hold $tap-time $hold-time r lalt)
+    gt (tap-hold $tap-time $hold-time t lmet)
+
+    ga (tap-hold $tap-time $hold-time a lmet)
+    ge (tap-hold-except-keys $tap-time $hold-time e ralt (o))
+    gi (tap-hold $tap-time $hold-time i rctl)
 )
