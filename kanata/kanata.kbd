@@ -8,23 +8,23 @@
     q w e r t y u i o p
     a s d f g h j k l scln apo
     z x c v b n m comm . /
-    lmet spc rmet
+    fn lmet spc rmet
 )
 
 (deflayer base
-    @besc brdn brup lrld _ _ _ prev pp next mute vold volu
+    @esc brdn brup lrld _ _ _ prev pp next mute vold volu
     _ _ _ _ _ _ _ _ _ _
     @ba @bs @bd _ _ _ _ @bk @bl @bscln _
     _ _ _ _ _ _ _ _ _ _
-    @tab @spc _
+    (layer-switch graphite) @tab @spc _
 )
 
 (deflayer graphite
-    @gesc brdn brup lrld _ _ _ prev pp next mute vold volu
+    @esc brdn brup lrld _ _ _ prev pp next mute vold volu
     b l d w z apo f o u j
     @gn @gr @gt s g y h @ga @ge @gi comm
     q x m c v k p . - /
-    @tab @spc _
+    (layer-switch base) @tab @spc _
 )
 
 (deflayer nav
@@ -32,7 +32,7 @@
     _ _ _ _ _ A-left C-S-tab C-tab A-right _
     _ _ _ _ _ left down up right _ _
     _ _ _ _ _ home C-M-left C-M-right end _
-    _ _ _
+    _ _ _ _
 )
 
 (deflayer num
@@ -40,7 +40,7 @@
     _ _ _ _ _ S-= 7 8 9 _
     _ _ _ _ _ = 4 5 6 S-5 _
     _ _ _ _ _ - 1 2 3 _
-    _ _ 0
+    _ _ _ 0
 )
 
 
@@ -61,12 +61,12 @@
 
 (defalias
 
+    esc (tap-hold $tap-time $hold-time esc lrld)
     tab (tap-hold-release $tap-time $hold-time tab (layer-toggle num))
     spc (tap-hold-release $tap-time $hold-time spc (layer-toggle nav))
 
 
     ;; --- Base layer aliases ---
-    besc (tap-hold $tap-time $hold-time (layer-switch graphite) lrld)
 
     ba (tap-hold $tap-time $hold-time a lctl)
     bs (tap-hold $tap-time $hold-time s lalt)
@@ -78,7 +78,6 @@
 
 
     ;; --- Graphite layer aliases ---
-    gesc (tap-hold $tap-time $hold-time (layer-switch base) lrld)
 
     gn (tap-hold $tap-time $hold-time n lctl)
     gr (tap-hold $tap-time $hold-time r lalt)
