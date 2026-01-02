@@ -168,7 +168,7 @@ check-further-callbacks = true
 run = 'move-node-to-workspace m'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'keymapp|type fu'
+if.app-name-regex-substring = 'keymapp|type fu|monkeytype'
 check-further-callbacks = true
 run = 'move-node-to-workspace b'
 
