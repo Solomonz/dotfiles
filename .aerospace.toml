@@ -109,7 +109,7 @@ alt-m = 'workspace m'
 alt-o = 'workspace o'
 alt-t = 'workspace t'
 alt-s = 'workspace s'
-alt-b = 'workspace b'
+alt-k = 'workspace k'
 alt-v = 'workspace v'
 alt-z = 'workspace z'
 cmd-h = ['workspace h1', 'workspace h2', 'workspace h3']
@@ -170,7 +170,7 @@ run = 'move-node-to-workspace m'
 [[on-window-detected]]
 if.app-name-regex-substring = 'keymapp|type fu|monkeytype'
 check-further-callbacks = true
-run = 'move-node-to-workspace b'
+run = 'move-node-to-workspace k'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'zoom'
@@ -193,7 +193,7 @@ m = 'built-in'
 o = 'main'
 t = 'built-in'
 s = 'built-in'
-b = 'built-in'
+k = 'built-in'
 v = [3, 2, 1]
 z = 'built-in'
 h1 = 1
