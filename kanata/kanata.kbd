@@ -16,18 +16,10 @@
 
 (deflayer base
     @esc brdn brup lrld _ _ _ prev pp next mute vold volu
-    _ _ _ _ _ _ _ _ _ _ _
-    @ba @bs @bd _ _ _ _ @bk @bl @bscln _
-    _ _ _ _ _ _ _ _ _ _
-    (layer-switch graphite) @tab @spc _
-)
-
-(deflayer graphite
-    @esc brdn brup lrld _ _ _ prev pp next mute vold volu
     b l d w z apo f o u j ;
-    @gn @gr @gt s g y h @ga @ge @gi comm
+    @n @r @t s g y h @a @e @i comm
     q x m c v k p . - /
-    (layer-switch base) @tab @spc @sym
+    _ @tab @spc @sym
 )
 
 (deflayer nav
@@ -74,24 +66,13 @@
     sym (tap-hold-release $tap-time $hold-time esc (layer-toggle sym))
 
 
-    ;; --- Base layer aliases ---
+    ;; --- Home row mods ---
 
-    ba (tap-hold $tap-time $hold-time a lctl)
-    bs (tap-hold $tap-time $hold-time s lalt)
-    bd (tap-hold $tap-time $hold-time d lmet)
+    n (tap-hold $tap-time $hold-time n lctl)
+    r (tap-hold $tap-time $hold-time r lalt)
+    t (tap-hold $tap-time $hold-time t lmet)
 
-    bk (tap-hold $tap-time $hold-time k lmet)
-    bl (tap-hold-except-keys $tap-time $hold-time l ralt (i))
-    bscln (tap-hold $tap-time $hold-time scln rctl)
-
-
-    ;; --- Graphite layer aliases ---
-
-    gn (tap-hold $tap-time $hold-time n lctl)
-    gr (tap-hold $tap-time $hold-time r lalt)
-    gt (tap-hold $tap-time $hold-time t lmet)
-
-    ga (tap-hold $tap-time $hold-time a lmet)
-    ge (tap-hold-except-keys $tap-time $hold-time e ralt (o))
-    gi (tap-hold $tap-time $hold-time i rctl)
+    a (tap-hold $tap-time $hold-time a lmet)
+    e (tap-hold-except-keys $tap-time $hold-time e ralt (o))
+    i (tap-hold $tap-time $hold-time i rctl)
 )
