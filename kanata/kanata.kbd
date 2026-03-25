@@ -27,7 +27,7 @@
     b l d w z apo f o u j ;
     @gn @gr @gt s g y h @ga @ge @gi comm
     q x m c v k p . - /
-    (layer-switch base) @tab @spc _
+    (layer-switch base) @tab @spc @sym
 )
 
 (deflayer nav
@@ -44,6 +44,14 @@
     _ _ _ _ _ = 4 5 6 S-5 _
     _ _ _ _ _ - 1 2 3 _
     _ _ _ 0
+)
+
+(deflayer sym
+    _ _ _ _ _ _ _ _ _ _ _ _ _
+    S-8 S-2 S-[ S-] S-6 _ _ _ _ _ _
+    S-1 ` S-9 S-0 S-4 _ _ _ _ _ _
+    S-7 S-\ [ ] \ _ _ _ _ _
+    _ S-- _ _
 )
 
 
@@ -63,6 +71,7 @@
     esc (tap-hold $tap-time $hold-time esc lrld)
     tab (tap-hold-release $tap-time $hold-time tab (layer-toggle num))
     spc (tap-hold-release $tap-time $hold-time spc (layer-toggle nav))
+    sym (tap-hold-release $tap-time $hold-time esc (layer-toggle sym))
 
 
     ;; --- Base layer aliases ---
