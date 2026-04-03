@@ -112,7 +112,6 @@ alt-s = 'workspace s'
 alt-k = 'workspace k'
 alt-v = 'workspace v'
 alt-z = 'workspace z'
-cmd-h = ['workspace h1', 'workspace h2', 'workspace h3']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -196,9 +195,6 @@ s = 'built-in'
 k = 'main'
 v = [3, 2, 1]
 z = 'built-in'
-h1 = 1
-h2 = [2, 1]
-h3 = [3, 2, 1]
 
 [mode.service.binding]
 q = 'mode main'
