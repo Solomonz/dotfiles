@@ -204,10 +204,10 @@ f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling
 o = 'enable off'
 # backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+alt-shift-y = ['join-with left', 'mode main']
+alt-shift-h = ['join-with down', 'mode main']
+alt-shift-a = ['join-with up', 'mode main']
+alt-shift-e = ['join-with right', 'mode main']
 
 [mode.resize.binding]
 h = 'resize smart -50'
