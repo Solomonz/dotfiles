@@ -106,7 +106,7 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-c = 'workspace c'
 alt-m = 'workspace m'
-alt-o = 'workspace o'
+alt-g = 'workspace g'
 alt-t = 'workspace t'
 alt-s = 'workspace s'
 alt-k = 'workspace k'
@@ -123,13 +123,12 @@ alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+alt-shift-t = ['move-node-to-workspace t', 'workspace t']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-
-# alt-g = 'exec-and-forget ~/bin/aerospace-remove-ghost-windows.sh'
 
 alt-shift-semicolon = 'mode service'
 alt-shift-r = 'mode resize'
@@ -147,9 +146,9 @@ check-further-callbacks = true
 run = 'move-node-to-workspace c'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'microsoft outlook'
+if.app-name-regex-substring = 'GMail'
 check-further-callbacks = true
-run = 'move-node-to-workspace --focus-follows-window o'
+run = 'move-node-to-workspace --focus-follows-window g'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'terminal|kitty'
@@ -189,7 +188,7 @@ run = 'move-node-to-workspace z'
 9 = 'built-in'
 c = 'main'
 m = 'built-in'
-o = 'main'
+g = 'main'
 t = 'built-in'
 s = 'built-in'
 k = 'main'
