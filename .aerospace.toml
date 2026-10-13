@@ -161,7 +161,7 @@ check-further-callbacks = true
 run = 'move-node-to-workspace s'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'workplace|messenger|messages|workchat|google chat'
+if.app-name-regex-substring = 'workplace|messenger|messages|workchat|google chat|slack'
 check-further-callbacks = true
 run = 'move-node-to-workspace m'
 
