@@ -26,7 +26,7 @@
     (layer-switch off) _ _ _ _ _ _ _ _ _ _ _ _
     _ _ _ _ _ A-left M-A-left M-A-right A-right _ _
     _ _ _ _ _ left down up right _ _
-    _ _ _ _ _ home C-M-left C-M-right end _
+    _ _ _ _ _ M-left C-M-left C-M-right M-right _
     _ _ _ _
 )
 
